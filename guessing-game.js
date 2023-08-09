@@ -39,7 +39,7 @@ function randomInRange(min, max) {
 function askGuess() {
     rl.question('Enter A Guessing Number: ', (userGuess) => {
         userGuess = Number(userGuess);
-
+        numAttempts--;
         if (checkGuess(userGuess)) {
             console.log("You Win!");
             rl.close();
@@ -47,7 +47,6 @@ function askGuess() {
             console.log("You Lose");
             rl.close();
         } else {
-            numAttempts--;
             askGuess();
         }
     })
